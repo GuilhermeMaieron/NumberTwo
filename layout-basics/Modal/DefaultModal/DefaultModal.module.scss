@@ -1,0 +1,27 @@
+.header{
+    background-color: var(--cor_principal);
+    color: var(--cor_mono);
+}
+
+.body{
+    background-color: var(--cor_principal);
+    color: var(--cor_mono);
+    scroll-behavior: smooth;
+    // min-height: 20rem;
+}
+
+.modal_border{
+    border: 1px solid var(--cor_mono_muito_fraco);
+}
+
+.fillH{
+    height: 85vh;
+}
+
+.mh {
+    max-height: 90vh;
+}
+
+.no_ov{
+    overflow: hidden !important;
+}

@@ -1,0 +1,21 @@
+.titulo_layout{
+    opacity: 0.0;
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 0rem 0rem;
+    font-weight: bold;
+    line-height: 1.3rem;
+    max-height: 0px;
+    pointer-events: none;
+    color: var(--cor_mono);
+
+    transition: all 0.11s ease-in-out 0.0s, color 0.0s ease-in-out 0.0s, max-height 0.2s ease-in-out 0.1s, padding 0.2s ease-in-out 0.1s;
+    
+    &.expanded{
+        transition: all 0.2s ease-in-out 0.9s, color 0.0s ease-in-out 0.0s, max-height 0.3s ease-in-out 0.3s, padding 0.3s ease-in-out 0.3s;
+        opacity: 1.0;
+        max-height: 350px;
+        padding: 0.5rem 1rem;
+        pointer-events: all;
+    }
+}

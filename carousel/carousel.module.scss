@@ -1,0 +1,184 @@
+.carousel_div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel_absolute_div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 40;
+}
+
+.item_div {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    position: absolute;
+}
+
+.carousel_items_div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.d_none {
+    display: none;
+}
+
+.dummy_div {
+    width: 100%;
+    height: 100%;
+}
+
+.z_grandinho {
+    z-index: 10;
+}
+
+.z_grandao {
+    z-index: 20;
+}
+
+.dummy_botao {
+    position: absolute;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+}
+
+.indicators_div {
+    width: 100%;
+    bottom: 0px;
+    padding: 0.7rem 0rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 0.5rem;
+    z-index: 200;
+}
+
+.indicator_btn {
+    width: 3rem;
+    height: 0.325rem;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(151, 151, 151);
+    opacity: 0.8;
+    border-radius: 360px;
+
+    &.selected {
+        background-color: rgb(255, 255, 255);
+        opacity: 1;
+    }
+}
+
+$edge_distance: 0.5rem;
+$width_ctrl_btn: 1.5rem;
+.ctrl_btn {
+    width: $width_ctrl_btn;
+    height: 100%;
+    display: flex;
+    top: 0px;
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transition: all 0.15s ease-in-out;
+    fill: white;
+
+    &:hover {
+        transform: scale(1.2);
+        opacity: 0.9;
+    }
+}
+
+.ctrl_next_btn {
+    right: 0px;
+    padding-right: $edge_distance;
+
+    &:hover {
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+            270deg,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(255, 121, 121, 0) 100%
+        );
+    }
+}
+
+.ctrl_prev_btn {
+    left: 0px;
+    padding-left: $edge_distance;
+
+    &:hover {
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(255, 121, 121, 0) 100%
+        );
+    }
+}
+
+.caption_bg {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    left: 0px;
+    bottom: 0px;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        360deg,
+        rgba(0, 0, 0, 1) 25%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    opacity: 0.75;
+    z-index: 190;
+    transition: all 0.25s ease-in-out;
+    pointer-events: none;
+
+    &.zero_op {
+        opacity: 0;
+    }
+
+    &.hover {
+        opacity: 0.92;
+        height: 90%;
+    }
+}
+
+.caption_div {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    left: calc(calc(100% - calc(80% - calc($width_ctrl_btn * 2))) / 2);
+    max-width: calc(80% - calc($width_ctrl_btn * 2));
+    width: 100%;
+    height: fit-content;
+    max-height: calc(100% - 2rem);
+    bottom: 1.5rem;
+    justify-content: center;
+    align-items: flex-end;
+    display: flex;
+    z-index: 200;
+    color: white;
+
+    &.show_caption {
+        opacity: 1;
+    }
+}
+
+.caption_children_div {
+    z-index: 100;
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.9);
+
+    &:hover {
+        transform: scale(1);
+    }
+}

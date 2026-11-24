@@ -1,0 +1,36 @@
+.imagem_capa_layout {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #000e1a;
+    overflow: hidden !important;
+    display: flex;
+    -webkit-mask-image: -webkit-radial-gradient(white, white);
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem_capa_botao{
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 10;
+}
+
+.coverFull{
+    object-fit: cover !important;
+}
+
+.imagem_capa_bg{
+    position: absolute;
+    width: 112%;
+    height: 112%;
+    left: -6%;
+    top: -6%;
+    z-index: 1;
+    filter: blur(4px);
+    opacity:0.6;
+}

@@ -1,0 +1,57 @@
+$dist_button: 1rem;
+
+.theme_float_button_layout{
+    position: fixed;
+    z-index: 900;
+    right: $dist_button;
+    bottom: $dist_button;
+    user-select: none !important;
+}
+
+$tamanho_button: 3.5rem;
+.ft_label{
+    width: $tamanho_button;
+    height: $tamanho_button;
+    border-radius: 360px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.13s ease-in-out;
+
+    &:hover{
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+}
+
+.icone_btn{
+    font-size: 1.75rem;
+    color: white;
+}
+
+.float_theme_toggle:checked + .ft_label {
+    .light_mode{
+        left: 0%;
+        z-index: 20;
+    }
+}
+
+.theme_md{
+    width: 100%;
+    height: 100%;
+    border-radius: 360px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.2s;
+}
+
+.dark_mode{
+    background-color: rgb(2, 25, 88);
+}
+
+.light_mode{
+    background-color: rgb(100, 182, 236);
+    left: -100%;
+}

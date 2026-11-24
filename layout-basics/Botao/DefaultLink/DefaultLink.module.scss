@@ -1,0 +1,12 @@
+.link{
+    color: var(--cor_secundaria) !important;
+    transition: all 0.1s;
+    text-decoration: none !important;
+    width: fit-content;
+
+    &:hover{
+        opacity: 0.85;
+        transform: scale(1.04);
+        cursor: pointer !important;
+    }
+}

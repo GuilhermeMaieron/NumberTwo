@@ -1,0 +1,12 @@
+$cor_texto: var(--cor_mono_fraco);
+
+.order_layout{
+    background-color: var(--cor_principal_alt);
+    color: transparent;
+    transition: color 0.2s;
+    
+    &.expanded{
+        color: var(--cor_mono_fraco);
+        transition: color 0.2s ease-in-out 0.6s;
+    }
+}

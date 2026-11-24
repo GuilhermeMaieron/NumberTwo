@@ -1,0 +1,51 @@
+.field_div{
+    // blueprint for the items inside the form
+    max-width: 100% !important;
+    flex-basis: 25%;
+    flex-grow: 1;
+}
+
+.saveBtn{
+    max-width: 100%;
+    width: 18rem;
+}
+
+@mixin md {
+    @media (min-width: #{768px}) {
+        @content;
+    }
+}
+.cancelarBtn{
+    max-width: 100%;
+    width: 13.9rem;
+
+    @include md{
+        width: 18rem;
+    }
+}
+
+.cancelBtnDiv{
+    display: flex;
+    justify-content: center;
+    order: 2;
+    gap: 1.5rem;
+    
+    @include md{
+        order: 1;
+        justify-content: flex-start;
+    }
+
+}
+.submitBtnDiv{
+    display: flex;
+    justify-content: center;
+    order: 1;
+    margin-bottom: .5rem;
+    
+    @include md{
+        order: 2;
+        margin-bottom: 0rem;
+
+        justify-content: flex-end;
+    }
+}

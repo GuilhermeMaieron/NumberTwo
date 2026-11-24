@@ -1,0 +1,28 @@
+.number_field{
+    max-width: 100% !important;
+    background-color: var(--cor_principal_forte) !important;
+    border-color: var(--cor_mono_muito_fraco) !important;
+    color: var(--cor_mono_fraco) !important;
+    transition: background-color 0.2s;
+    text-align: right;
+    
+    &:disabled{
+        background-color: var(--cor_principal) !important;
+    }
+
+    //make the apearence of bidi graph more plesant to the eye
+    &::-webkit-inner-spin-button {
+        margin-left: .125rem;
+        margin-right: -0.625rem;
+
+        height: 1rem;
+        width: .5rem;
+        align-self: center;
+    }
+}
+
+.div{
+    max-width: 100%;
+    flex-basis: 10rem;
+    flex-grow: 1;
+}

@@ -1,0 +1,81 @@
+.button {
+    background-color: var(--cor_secundaria_fraca);
+    color: white;
+    transition: all 0.15s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    text-decoration: none;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.5rem;
+    outline: none;
+    width: fit-content;
+    font-size: 1rem;
+
+    &:hover {
+        transform: scale(1.025);
+        opacity: 0.9;
+        background-color: var(--cor_secundaria_fraca);
+        color: white;
+    }
+
+    &.disabletransform {
+        transform: scale(1) !important;
+    }
+
+    &:disabled,
+    &.disabled {
+        opacity: 0.64 !important;
+        pointer-events: none !important;
+    }
+}
+
+.danger {
+    background-color: var(--cor_contraste) !important;
+    border: 1px solid var(--cor_contraste);
+}
+
+.dangerReverse {
+    color: var(--cor_contraste) !important;
+    border: 1px solid var(--cor_contraste);
+    background-color: transparent !important;
+}
+
+.neutral {
+    background-color: var(--cor_principal_alt) !important;
+    color: var(--cor_mono_fraco) !important;
+    border: 1px solid var(--cor_mono_muito_fraco);
+}
+.defaultReverse {
+    background-color: var(--cor_principal_forte) !important;
+    color: var(--cor_secundaria) !important;
+    border: 1px solid var(--cor_secundaria) !important;
+    &:hover {
+        background-color: var(--cor_secundaria) !important;
+        color: var(--cor_principal_forte) !important;
+    }
+}
+.ghost {
+    background-color: transparent !important;
+    color: var(--cor_mono) !important;
+}
+
+.link {
+    background-color: transparent !important;
+    color: var(--cor_secundaria);
+    text-decoration: none;
+    &:hover {
+        text-decoration: solid underline;
+    }
+}
+
+.sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+}

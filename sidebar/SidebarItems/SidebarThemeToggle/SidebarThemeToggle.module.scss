@@ -1,0 +1,37 @@
+.layout_toggle{
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor_mono_fraco);
+    font-size: 1.1rem;
+    width: 100%;
+    overflow: hidden;
+
+    i{
+        transition: all 0.2s;
+        opacity: 0.0;
+    }
+
+    &.expanded{
+
+        i{
+            transition: all 0.2s linear 0.6s color 0.2s linear 0.0s;
+            opacity: 1.0;
+        }
+    }
+}
+
+.icone_div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.input_check{
+    margin-top: 0.325rem;
+    height: 1rem;
+    width: 1.825rem;
+}

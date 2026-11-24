@@ -1,0 +1,92 @@
+.busca_layout{
+    font-weight: bold;
+    background-color: var(--cor_principal_alt);
+    border: 1px solid;
+    border-color: var(--cor_mono_muito_fraco) !important;
+    outline: 0px solid;
+    outline-color: var(--cor_mono_muito_fraco) !important;
+    transition: outline 0.1s;
+
+    i{
+        color: var(--cor_mono_fraco) !important;
+    }
+    
+    &:has(.input_busca:focus)
+    {
+        outline: 3px solid;
+    }
+
+    .input_gp{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .input_busca{
+        background-color: transparent !important;
+        display: none;
+        pointer-events: none !important;
+        border: none !important;
+        color: var(--cor_mono_fraco) !important;
+        
+        &:focus{
+            outline: none;
+            box-shadow:none !important;
+            background-color: transparent !important;
+        }
+    }
+
+    .btn_busca_exp{
+        opacity: 0.0;
+        pointer-events: none !important;
+        position: absolute !important;
+    }
+
+    .btn_busca_min{
+        opacity: 1.0;
+        position: relative !important;
+        pointer-events: all !important;
+    }
+
+    .botao_layout{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        transition: all 0.24s;
+    }
+
+    &.expanded{
+
+        .botao_layout{
+            width: 2.5rem;
+        }
+
+        .input_busca{
+            display: block;
+            pointer-events: all !important;
+        }
+
+        .btn_busca_exp{
+            opacity: 1.0;
+            position: relative !important;
+            pointer-events: all !important;
+        }
+
+        .btn_busca_min{
+            opacity: 0.0;
+            position: absolute !important;
+            pointer-events: none !important;
+        }
+
+    }
+}
+
+
+.btn_busca_min, .btn_busca_exp{
+    border: none !important;
+    transition: transform 0.13s;
+
+    &:hover{
+        transform: scale(1.15);
+    }
+}
+

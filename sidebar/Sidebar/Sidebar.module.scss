@@ -1,0 +1,242 @@
+// Small devices
+@mixin sm {
+    @media (min-width: #{576px}) {
+        @content;
+    }
+ }
+ 
+ // Medium devices
+ @mixin md {
+    @media (min-width: #{768px}) {
+        @content;
+    }
+ }
+ 
+ // Large devices
+ @mixin lg {
+    @media (min-width: #{1200px}) {
+        @content;
+    }
+ }
+ 
+ // Extra large devices
+ @mixin xl {
+    @media (min-width: #{1400px}) {
+        @content;
+    }
+}
+
+
+// VARIAVEIS
+$width_nav_main: 19rem;
+
+$width_nav_menor: 3.75rem;
+
+$height_nav_mobile: 2.875rem;
+
+$height_footer: 6.5rem;
+
+// CSS MESMO
+$tam_toggle_bot: 2.125rem;
+.sidebar_toggle_botao{
+    height: $tam_toggle_bot;
+    width: $tam_toggle_bot;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+    border: none;
+    transition: all 0.2s;
+    border: 1px solid var(--border);
+    border-radius: 360px;
+    background-color: var(--primary);
+
+    .iconezinho{
+        font-size: 1rem;
+    }
+
+    &:hover{
+        transform: scale(1.1);
+        background-color: var(--secondary);
+        cursor: pointer;
+    }
+}
+
+.cor_borda{
+    border-color: var(--border) !important;
+}
+
+.titulo_sidebar{
+    transition: all 0.6s;
+    height: $height_nav_mobile;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    transition-delay: 0.0s;
+
+    max-width: 0px;
+
+    align-items: center;
+}
+
+
+.titulo_link{
+    text-decoration: none;
+    color: var(--primary-foreground);
+    transition: all 0.2s;
+    text-align: start;
+    line-height: 1.35rem;
+    font-size: 1.2rem;
+}
+
+
+.toggler_div{
+    width: $width_nav_menor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.margem_minuscula{
+    margin-top: 1px;
+}
+
+$padding_content: 1rem;
+.mid_content{
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    
+
+    transition: all 0.2s ease-in-out;
+    transition-delay: 0.2s;
+
+    padding: $padding_content 0rem;
+    // Firefox
+    scrollbar-width: thin;
+    scrollbar-color: #C5D2C5 transparent;
+
+    // Chrome, Edge, Safari
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #C5D2C5;
+        border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #8FA891;
+    }
+
+    height: calc(calc(var(--vh, 1vh) * 100) - calc($height_footer + $height_nav_mobile));
+}
+
+
+.content_footer{
+    position: relative;
+    height: $height_footer;
+}
+
+.main_sidebar{
+    background-color: var(--primary);
+    position: fixed;
+    z-index: 20;
+    transition: all 0.4s linear 0.21s, background-color 0.2s linear 0.0s;
+    font-weight: bold;
+    flex-shrink: 0;
+    // DISPOSTIVOS MOBILE
+    width: 100vw;
+    height: $height_nav_mobile;
+    color: var(--primary-foreground);
+
+    .conteudo_sidebar{
+        position: absolute;
+        width: 100vw;
+        height: calc(100vh - $height_nav_mobile);
+        left: -102%;
+        top: $height_nav_mobile;
+        transition: all 0.3s;
+        background-color: var(--primary);
+    }
+    
+
+    &.expand{
+        .conteudo_sidebar{
+            left: 0%;  
+        }
+        
+        .titulo_sidebar{
+            max-width: 100%;
+            transition-delay: 0.6s;
+        }
+
+        .mid_content {
+            padding: $padding_content 1.5rem;
+        }
+    }
+
+    .cabecalho_sidebar{
+        position: relative;
+        transition: all 0.2s;
+    }
+
+
+    .icone_mobile{
+        display: block;
+    }
+
+    // DISPOSITIVOS MÉDIOS OU MAIOR
+    @include md {
+        height: 100vh;
+        width: $width_nav_menor;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        .icone_mobile{
+            display: none;
+        }
+
+        .titulo_sidebar{
+            padding-top: 0px;
+            
+        }
+
+        .div_barrinha{
+            opacity: 0;
+        }
+    
+        
+        &.expand{
+            width: $width_nav_main;
+            
+            .div_barrinha{
+                opacity: 1.0;
+                transition: all 0.2s;
+            }
+
+            .cabecalho_sidebar{
+                max-height: 500px;
+                transition-delay: 0.6s;
+            }
+        }
+
+        .conteudo_sidebar{
+            position: relative;
+            width: 100%;
+            background-color: transparent;
+            left: 0%;
+            top: 0px;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.card{
+    border: 1px solid var(--cor_mono_muito_fraco);
+    border-radius: 0.36rem;
+    text-align: center;
+    background-color: var(--cor_principal);
+    color: var(--cor_mono_fraco);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.label{
+    font-size: 1rem;
+    color: var(--cor_mono);
+}
+
+.titulo_card{
+    background-color: var(--cor_principal_alt);
+
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 0.36rem 0.36rem 0rem 0rem;
+    border-bottom: 1px solid var(--cor_mono_muito_fraco);
+}

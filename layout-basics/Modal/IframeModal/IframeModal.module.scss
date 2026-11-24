@@ -1,0 +1,17 @@
+.nop{
+    padding: 0rem !important;
+    overflow-y: hidden !important;
+}
+
+.iframeclass{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.modalBig{
+    margin: 1rem;
+    max-width: none;
+    max-height: none;
+    height: calc(100% - 2rem);
+}

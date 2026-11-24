@@ -1,0 +1,57 @@
+// Small devices
+@mixin sm {
+    @media (min-width: #{576px}) {
+        @content;
+    }
+ }
+ 
+ // Medium devices
+ @mixin md {
+    @media (min-width: #{768px}) {
+        @content;
+    }
+ }
+ 
+ // Large devices
+ @mixin lg {
+    @media (min-width: #{1200px}) {
+        @content;
+    }
+ }
+ 
+ // Extra large devices
+ @mixin xl {
+    @media (min-width: #{1400px}) {
+        @content;
+    }
+}
+
+
+.cor_borda{
+    border-color: var(--cor_mono_muito_fraco) !important;
+}
+
+.body_style{
+    width: 100%;
+    min-height: 100%;
+    height: fit-content;
+    background-color: var(--cor_principal_alt);
+    padding: 0.675rem;
+    position: relative;
+    transition: background-color 0.2s;
+
+    @include md {
+        padding: 1.25rem 2.25%;
+    }
+
+    @include lg {
+        padding: 1.5rem 2.5%;
+    }
+}
+
+.content_style{
+    width: 100%;
+    min-height: 92vh;
+    background-color: var(--cor_principal);
+    transition: background-color 0.2s;
+}
